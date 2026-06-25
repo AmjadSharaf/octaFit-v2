@@ -1,0 +1,192 @@
+{
+  "user": {
+    "id": "u1",
+    "name": "Alex Johnson",
+    "username": "alex_octafit",
+    "email": "alex@example.com",
+    "initials": "AJ",
+    "bio": "Building the best version of myself with OctaFit",
+    "goal": "Build Muscle",
+    "level": "Advanced",
+    "age": 28,
+    "weight": 82,
+    "height": 178,
+    "isPro": true,
+    "workouts": 142,
+    "streak": 14,
+    "followers": 1200,
+    "prs": 23
+  },
+  "weeklyStats": {
+    "calories": 12450,
+    "workouts": 5,
+    "hours": 8.5
+  },
+  "programs": [
+    {"id": "p1", "title": "12-Week Hypertrophy", "subtitle": "Bodybuilding · 48 workouts", "icon": "🏋️", "category": "Bodybuilding", "level": "Advanced", "duration": "12 weeks", "workouts": 48, "rating": 4.9, "progress": 25},
+    {"id": "p2", "title": "MMA Combat Ready", "subtitle": "MMA · 36 sessions", "icon": "🥊", "category": "MMA", "level": "Intermediate", "duration": "8 weeks", "workouts": 36, "rating": 4.8, "progress": 0},
+    {"id": "p3", "title": "Home Warrior", "subtitle": "Calisthenics · 30 days", "icon": "💪", "category": "Home", "level": "Beginner", "duration": "30 days", "workouts": 30, "rating": 4.7, "progress": 0},
+    {"id": "p4", "title": "Olympic Lifting", "subtitle": "Weightlifting · 24 weeks", "icon": "🏅", "category": "Olympic", "level": "Elite", "duration": "24 weeks", "workouts": 72, "rating": 4.9, "progress": 0},
+    {"id": "p5", "title": "HIIT X-Factor", "subtitle": "Cardio · 21 days", "icon": "🔥", "category": "Cardio", "level": "Intermediate", "duration": "21 days", "workouts": 21, "rating": 4.6, "progress": 0},
+    {"id": "p6", "title": "Fighter Physique", "subtitle": "Hybrid · 16 weeks", "icon": "⚡", "category": "MMA", "level": "Advanced", "duration": "16 weeks", "workouts": 64, "rating": 4.8, "progress": 0}
+  ],
+  "exercises": [
+    {"id": "e1", "name": "Barbell Squat", "muscle": "Legs", "equipment": "Barbell", "sets": 4, "reps": "8-10", "rest": "90s"},
+    {"id": "e2", "name": "Bench Press", "muscle": "Chest", "equipment": "Barbell", "sets": 4, "reps": "8-10", "rest": "90s"},
+    {"id": "e3", "name": "Deadlift", "muscle": "Back", "equipment": "Barbell", "sets": 3, "reps": "5-6", "rest": "120s"},
+    {"id": "e4", "name": "Pull-ups", "muscle": "Back", "equipment": "Bodyweight", "sets": 4, "reps": "8-12", "rest": "60s"},
+    {"id": "e5", "name": "Overhead Press", "muscle": "Shoulders", "equipment": "Barbell", "sets": 4, "reps": "8-10", "rest": "90s"},
+    {"id": "e6", "name": "Romanian Deadlift", "muscle": "Hamstrings", "equipment": "Barbell", "sets": 3, "reps": "10-12", "rest": "90s"}
+  ],
+  "workoutSession": {
+    "title": "Upper Body Power",
+    "duration": 45,
+    "exercises": [
+      {"name": "Barbell Bench Press", "sets": 4, "reps": 8, "weight": 80, "completed": 2},
+      {"name": "Incline Dumbbell Press", "sets": 3, "reps": 10, "weight": 32, "completed": 0},
+      {"name": "Cable Flyes", "sets": 3, "reps": 12, "weight": 15, "completed": 0},
+      {"name": "Tricep Pushdown", "sets": 3, "reps": 15, "weight": 25, "completed": 0},
+      {"name": "Lateral Raises", "sets": 3, "reps": 15, "weight": 10, "completed": 0},
+      {"name": "Face Pulls", "sets": 3, "reps": 20, "weight": 20, "completed": 0}
+    ]
+  },
+  "products": [
+    {"id": "prod1", "name": "Whey Protein Pro", "brand": "OctaFit Nutrition", "price": 89.0, "rating": 4.8, "reviews": 2341, "tag": "Best Seller", "icon": "💊", "category": "Supplements"},
+    {"id": "prod2", "name": "Pre-Workout X5", "brand": "OctaFit Labs", "price": 55.0, "rating": 4.7, "reviews": 1205, "tag": "New", "icon": "⚡", "category": "Supplements"},
+    {"id": "prod3", "name": "Creatine Monohydrate", "brand": "Pure Gains", "price": 28.0, "rating": 4.9, "reviews": 3892, "icon": "⚗️", "category": "Supplements"},
+    {"id": "prod4", "name": "BCAA Essential", "brand": "OctaFit", "price": 38.0, "rating": 4.6, "reviews": 876, "icon": "💉", "category": "Supplements"},
+    {"id": "prod5", "name": "Mass Gainer Pro", "brand": "BulkPro", "price": 75.0, "rating": 4.5, "reviews": 562, "icon": "🧪", "category": "Supplements"},
+    {"id": "prod6", "name": "L-Glutamine", "brand": "RecoverX", "price": 25.0, "rating": 4.7, "reviews": 1102, "icon": "🔬", "category": "Supplements"},
+    {"id": "prod7", "name": "Resistance Bands Set", "brand": "OctaFit Gear", "price": 45.0, "rating": 4.8, "reviews": 890, "icon": "🎒", "category": "Equipment"},
+    {"id": "prod8", "name": "Training Tank Top", "brand": "OctaFit Apparel", "price": 35.0, "rating": 4.6, "reviews": 445, "icon": "👕", "category": "Apparel"}
+  ],
+  "posts": [
+    {"id": "post1", "user": "Marcus Chen", "avatar": "MC", "time": "2m ago", "content": "Just hit a new PR on deadlifts — 200kg! 3 years of grinding finally paying off 🔥", "likes": 142, "comments": 28, "icon": "🏋️"},
+    {"id": "post2", "user": "Sarah Kim", "avatar": "SK", "time": "15m ago", "content": "Finished Week 6 of the OctaFit 12-Week Hypertrophy program. Body recomp is REAL.", "likes": 89, "comments": 15, "icon": "💪"},
+    {"id": "post3", "user": "Jake Rivera", "avatar": "JR", "time": "1h ago", "content": "MMA sparring session with Coach today. AI form analysis says my jab speed improved 18%!", "likes": 67, "comments": 9, "icon": "🥊"},
+    {"id": "post4", "user": "Lisa Martinez", "avatar": "LM", "time": "3h ago", "content": "Morning run complete — 10K in 48 minutes. Zone 2 cardio is the secret sauce.", "likes": 54, "comments": 7, "icon": "🏃"},
+    {"id": "post5", "user": "Kevin Tan", "avatar": "KT", "time": "5h ago", "content": "100 pushup challenge DONE ✅ Who's joining me tomorrow?", "likes": 201, "comments": 42, "icon": "💯"}
+  ],
+  "notifications": [
+    {"icon": "🤖", "title": "AI Insight Ready", "body": "Your movement analysis is complete. 3 improvements found.", "time": "Just now", "unread": true},
+    {"icon": "🏆", "title": "Achievement Unlocked!", "body": "You've completed 100 workouts — Iron Warrior badge earned!", "time": "2h ago", "unread": true},
+    {"icon": "💬", "title": "Marcus Chen replied", "body": "Great PR bro! Keep crushing it 🔥", "time": "3h ago", "unread": true},
+    {"icon": "⚡", "title": "Workout Reminder", "body": "Upper Body Power session scheduled for 6:00 PM today.", "time": "Yesterday", "unread": false},
+    {"icon": "🎯", "title": "Weekly Goal", "body": "You're 80% to your weekly calorie burn goal.", "time": "Yesterday", "unread": false},
+    {"icon": "🛒", "title": "Order Shipped", "body": "Your Whey Protein order is on its way.", "time": "2 days ago", "unread": false}
+  ],
+  "achievements": [
+    {"id": "a1", "title": "Iron Warrior", "description": "Complete 100 workouts", "icon": "🏆", "unlocked": true, "progress": 100},
+    {"id": "a2", "title": "Streak Master", "description": "14-day workout streak", "icon": "🔥", "unlocked": true, "progress": 100},
+    {"id": "a3", "title": "PR Hunter", "description": "Set 20 personal records", "icon": "📈", "unlocked": true, "progress": 100},
+    {"id": "a4", "title": "Community Star", "description": "Get 1000 likes on posts", "icon": "⭐", "unlocked": false, "progress": 67},
+    {"id": "a5", "title": "AI Pioneer", "description": "Use AI Coach 50 times", "icon": "🤖", "unlocked": false, "progress": 84},
+    {"id": "a6", "title": "Marathon Ready", "description": "Run 42km total", "icon": "🏃", "unlocked": false, "progress": 45}
+  ],
+  "challenges": [
+    {"id": "c1", "title": "100 Pushup Challenge", "participants": 2847, "daysLeft": 5, "icon": "💪", "joined": true},
+    {"id": "c2", "title": "30-Day Plank", "participants": 1923, "daysLeft": 12, "icon": "🧘", "joined": false},
+    {"id": "c3", "title": "Squat Every Day", "participants": 3456, "daysLeft": 8, "icon": "🏋️", "joined": true},
+    {"id": "c4", "title": "10K Steps Daily", "participants": 5621, "daysLeft": 20, "icon": "👟", "joined": false}
+  ],
+  "leaderboard": [
+    {"rank": 1, "name": "Marcus Chen", "initials": "MC", "points": 12450, "badge": "🥇"},
+    {"rank": 2, "name": "Sarah Kim", "initials": "SK", "points": 11200, "badge": "🥈"},
+    {"rank": 3, "name": "Alex Johnson", "initials": "AJ", "points": 9870, "badge": "🥉", "isMe": true},
+    {"rank": 4, "name": "Jake Rivera", "initials": "JR", "points": 8900, "badge": ""},
+    {"rank": 5, "name": "Lisa Martinez", "initials": "LM", "points": 7650, "badge": ""}
+  ],
+  "aiResponses": [
+    "Based on your biomechanics data, I recommend focusing on hip mobility before your next squat session. Your left hip shows 8% less range than your right.",
+    "Excellent question! For muscle hypertrophy, progressive overload is key. Increase weight by 2.5% every session where you hit all target reps.",
+    "Your recovery score is at 87% today. I suggest a moderate intensity session — perfect for skill work and technique refinement.",
+    "Looking at your nutrition logs, you're averaging 180g protein daily. For your current training phase, aim for 195g to support muscle synthesis.",
+    "Your squat depth improved 12% this week! Ready for progressive overload. I recommend adding 2.5kg to your working sets."
+  ],
+  "motionAnalysis": {
+    "exercise": "Barbell Squat",
+    "score": 87,
+    "improvements": [
+      {"area": "Knee Tracking", "status": "Good", "score": 92},
+      {"area": "Hip Depth", "status": "Needs Work", "score": 78},
+      {"area": "Bar Path", "status": "Excellent", "score": 95},
+      {"area": "Core Stability", "status": "Good", "score": 85}
+    ],
+    "tips": [
+      "Drive knees outward during descent",
+      "Aim for hip crease below knee cap",
+      "Keep chest up and core braced throughout"
+    ]
+  },
+  "motionAnalyses": [
+    {"id": "ma1", "exercise": "Barbell Squat", "score": 87, "date": "Jun 10", "trend": "+5"},
+    {"id": "ma2", "exercise": "Deadlift", "score": 91, "date": "Jun 8", "trend": "+2"},
+    {"id": "ma3", "exercise": "Bench Press", "score": 78, "date": "Jun 5", "trend": "-1"}
+  ],
+  "nutritionPlan": {
+    "calories": 2340,
+    "targetCalories": 3200,
+    "protein": 178,
+    "targetProtein": 210,
+    "carbs": 280,
+    "targetCarbs": 350,
+    "fat": 62,
+    "targetFat": 85,
+    "meals": [
+      {"name": "Breakfast", "calories": 620, "items": "Oats, eggs, berries"},
+      {"name": "Lunch", "calories": 780, "items": "Chicken, rice, vegetables"},
+      {"name": "Dinner", "calories": 640, "items": "Salmon, sweet potato"},
+      {"name": "Snacks", "calories": 300, "items": "Protein shake, almonds"}
+    ]
+  },
+  "habits": [
+    {"id": "h1", "name": "Morning Mobility", "streak": 12, "completed": true, "icon": "🧘"},
+    {"id": "h2", "name": "10K Steps", "streak": 8, "completed": false, "icon": "👟"},
+    {"id": "h3", "name": "Protein Target", "streak": 14, "completed": true, "icon": "🥩"},
+    {"id": "h4", "name": "Sleep 8hrs", "streak": 5, "completed": false, "icon": "😴"},
+    {"id": "h5", "name": "Hydration 3L", "streak": 10, "completed": true, "icon": "💧"}
+  ],
+  "digitalAthlete": {
+    "progress": 74,
+    "daysRemaining": 63,
+    "predictions": [
+      {"period": "30 days", "weight": 80, "bodyFat": 16, "confidence": 92},
+      {"period": "60 days", "weight": 78, "bodyFat": 14, "confidence": 85},
+      {"period": "90 days", "weight": 76, "bodyFat": 12, "confidence": 78}
+    ],
+    "timeline": [
+      {"date": "Mar 2026", "label": "Start", "weight": 85, "bodyFat": 18},
+      {"date": "Apr 2026", "label": "Month 1", "weight": 83, "bodyFat": 17},
+      {"date": "May 2026", "label": "Month 2", "weight": 82, "bodyFat": 16},
+      {"date": "Jun 2026", "label": "Now", "weight": 82, "bodyFat": 16}
+    ]
+  },
+  "physioPlans": [
+    {"id": "pp1", "title": "Knee Recovery Protocol", "days": 7, "risk": "Low"},
+    {"id": "pp2", "title": "Shoulder Mobility", "days": 14, "risk": "Medium"}
+  ],
+  "orders": [
+    {"id": "ord1", "product": "Whey Protein Pro", "status": "Delivered", "date": "Jun 5", "tracking": "OF-2847193"},
+    {"id": "ord2", "product": "Pre-Workout X5", "status": "In Transit", "date": "Jun 9", "tracking": "OF-2847201"}
+  ],
+  "memberships": [
+    {"id": "free", "name": "Free", "price": 0, "features": ["Basic workouts", "Community access"]},
+    {"id": "pro", "name": "Pro", "price": 14.99, "features": ["All AI tools", "Personalized plans", "Motion analysis"]},
+    {"id": "elite", "name": "Elite", "price": 29.99, "features": ["Everything in Pro", "1-on-1 AI coaching", "Priority support"]}
+  ],
+  "groups": [
+    {"id": "g1", "name": "Hypertrophy Heroes", "members": 1240, "icon": "🏋️"},
+    {"id": "g2", "name": "MMA Fighters", "members": 890, "icon": "🥊"},
+    {"id": "g3", "name": "Run Club", "members": 2100, "icon": "🏃"}
+  ],
+  "events": [
+    {"id": "ev1", "title": "City 10K Run", "date": "Jun 15", "location": "Central Park", "attendees": 340},
+    {"id": "ev2", "title": "CrossFit Open", "date": "Jun 22", "location": "OctaFit Arena", "attendees": 120}
+  ],
+  "milestones": [
+    {"id": "m1", "title": "First 50 Workouts", "progress": 100, "icon": "💪"},
+    {"id": "m2", "title": "100 Workouts", "progress": 100, "icon": "🏆"},
+    {"id": "m3", "title": "200 Workouts", "progress": 71, "icon": "⚡"},
+    {"id": "m4", "title": "1 Year Streak", "progress": 38, "icon": "🔥"}
+  ]
+}
