@@ -1,13 +1,17 @@
-from  pydantic_settings import BaseSettings, SettingsConfigDict
-
+from typing import List
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
 class Settings(BaseSettings):
-    AppName: str
-    AppVersion: str
+    APP_NAME: str
+    APP_VERSION: str
     APP_ENV: str
-    class Config:
-        env_file = ".env"
-        
+    FILE_ALLOWED_TYPSE: List[str]
+    FILE_MAX_SIZE_MB: int
 
-def get_settings() :
+    model_config = SettingsConfigDict(
+        env_file="src/.env",
+        extra="ignore"
+    )
+
+def get_settings():
     return Settings()
