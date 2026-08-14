@@ -54,7 +54,8 @@ final GoRouter appRouter = GoRouter(
     ),
     _fullScreenRoute(AppRouters.welcome, const WelcomeView()),
     _fullScreenRoute(AppRouters.signup, const SignupScreen()),
-    _fullScreenRoute(AppRouters.login, const LoginScreen())
+    _fullScreenRoute(AppRouters.login, const LoginScreen()),
+    // for (var step = 1; step <= 8; step++)
     //  _fullScreenRoute(AppRoutes.verifyEmail, const VerifyEmailScreen()),
     // _fullScreenRoute(AppRoutes.createPassword, const CreatePasswordScreen()),
     // 

@@ -1,14 +1,14 @@
-class User {
-  final String id;
-  final String email;
-  final String? name;
-
-  User({required this.id, required this.email, this.name});
-}
+import 'package:octafitv2/features/auth/data/Model/data/model_user.dart';
 
 abstract class AuthRepository {
   Future<User?> getCurrentUser();
   Future<User> login(String email, String password);
-  Future<User> register(String email, String password, String name);
+  Future<User> register({
+    required String name,
+    required String email,
+    required String phone,
+    required String password,
+    required String passwordConfirmation,
+  });
   Future<void> logout();
 }
