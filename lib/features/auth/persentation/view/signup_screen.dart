@@ -129,7 +129,7 @@ class _SignupScreenState extends State<SignupScreen> {
             ).showSnackBar(SnackBar(content: Text(state.message)));
           }
           if (state is AuthAuthenticated) {
-            context.go(AppRouters.welcome);
+            context.go(AppRouters.home);
           }
         },
         builder: (context, state) {

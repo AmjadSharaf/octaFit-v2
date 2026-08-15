@@ -5,6 +5,8 @@ import 'package:octafitv2/core/storage/preferences_service.dart';
 import 'package:octafitv2/features/auth/data/Repository%20Implementation/auth_repository_impl.dart';
 
 import 'package:octafitv2/features/auth/persentation/manegar/auth_cubit.dart';
+import 'package:octafitv2/features/home/data/Repository%20Implementation/home_repositry_impl.dart';
+import 'package:octafitv2/features/home/domain/Repositories/home_repository.dart';
 import 'package:octafitv2/features/settings/presentation/cubit/settings_cubit.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -13,19 +15,29 @@ void main() async {
 
   final prefs = await SharedPreferences.getInstance();
   final preferencesService = PreferencesService(prefs);
+    final homeRepository = HomeRepositoryImpl(
+    // أضف الـ dependencies اللي يحتاجها (مثلاً: remoteDataSource, localDataSource)
+    // مثال: remoteDataSource: HomeRemoteDataSourceImpl(dio: Dio()),
+  );
   runApp(
-    MultiBlocProvider(
+    MultiRepositoryProvider(
       providers: [
-        BlocProvider(
-          create: (context) => SettingsCubit(
-            preferencesService: preferencesService,
-            preferences: preferencesService,
-          ),
-        ),
-
-        BlocProvider(create: (context) => AuthCubit(AuthRepositoryImpl(prefs))),
+            RepositoryProvider<HomeRepository>.value(value: homeRepository),
       ],
-      child: const OctaApp(),
+      child: MultiBlocProvider(
+        providers: [
+          BlocProvider(
+            create: (context) => SettingsCubit(
+              preferencesService: preferencesService,
+              preferences: preferencesService,
+            ),
+          ),
+      
+          BlocProvider(create: (context) => AuthCubit(AuthRepositoryImpl(prefs))),
+          
+        ],
+        child: const OctaApp(),
+      ),
     ),
   );
 }

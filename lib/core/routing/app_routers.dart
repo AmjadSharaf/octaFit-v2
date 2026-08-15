@@ -11,4 +11,8 @@ abstract final class AppRouters {
   static const onboarding5 = '/onboarding/5';
   static const signup = '/signup';
   static const login = "/login";
+
+  static const home = '/home';
+  static const search = '/search';
+  static const notifications = '/notifications';
 }
