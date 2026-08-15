@@ -66,11 +66,24 @@ final GoRouter appRouter = GoRouter(
     //
     // _fullScreenRoute(AppRoutes.forgotPassword, const ForgotPasswordScreen()),
     // _fullScreenRoute(AppRoutes.profileSetup, const ProfileSetupScreen()),
+    // ShellRoute(
+    //   routes: [
+    //     _shellRoute(
+    //       AppRouters.home,
+    //       BlocProvider(
+    //         create: (context) =>
+    //             HomeCubit(repository: context.read<HomeRepository>()),
+    //         child: const HomeScreen(),
+    //       ),
+    //     ),
+    //   ],
+    // ),
     ShellRoute(
+      builder: (context, state, child) => child, // ← هون
       routes: [
-        _shellRoute(
-          AppRouters.home,
-          BlocProvider(
+        GoRoute(
+          path: AppRouters.home,
+          builder: (context, state) => BlocProvider(
             create: (context) =>
                 HomeCubit(repository: context.read<HomeRepository>()),
             child: const HomeScreen(),
