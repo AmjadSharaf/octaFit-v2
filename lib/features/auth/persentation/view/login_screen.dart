@@ -107,7 +107,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 const Gap(16),
                 Center(
                   child: TextButton(
-                    onPressed: () => context.go(AppRouters.signup),
+                    onPressed: () => context.go(AppRouters.home),
                     child: RichText(
                       text: TextSpan(
                         style: GoogleFonts.inter(

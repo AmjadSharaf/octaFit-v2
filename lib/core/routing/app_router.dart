@@ -79,13 +79,19 @@ final GoRouter appRouter = GoRouter(
     //   ],
     // ),
     ShellRoute(
-      builder: (context, state, child) => child, // ← هون
+      builder: (context, state, child) {
+        return RepositoryProvider<HomeRepository>(
+          create: (context) => MockHomeRepository(),
+          child: child,
+        );
+      },
       routes: [
         GoRoute(
           path: AppRouters.home,
           builder: (context, state) => BlocProvider(
-            create: (context) =>
-                HomeCubit(repository: context.read<HomeRepository>()),
+            create: (context) => HomeCubit(
+              repository: context.read<HomeRepository>(), // ← الآن يقدر يوصله!
+            ),
             child: const HomeScreen(),
           ),
         ),
