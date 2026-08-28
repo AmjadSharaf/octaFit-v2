@@ -192,7 +192,7 @@ void _registerAuthModule(LoggerService logger) {
   sl.registerFactory<RegisterUseCase>(() => RegisterUseCase(authRepo));
   sl.registerFactory<ForgotPasswordUseCase>(() => ForgotPasswordUseCase(authRepo));
   sl.registerFactory<ResetPasswordUseCase>(() => ResetPasswordUseCase(authRepo));
-  sl.registerFactory<VerifyEmailUseCase>(() => VerifyEmailUseCase(authRepo));
+  // sl.registerFactory<VerifyEmailUseCase>(() => VerifyEmailUseCase(authRepo));
   sl.registerFactory<SocialLoginUseCase>(() => SocialLoginUseCase(authRepo));
   sl.registerFactory<LogoutUseCase>(() => LogoutUseCase(authRepo));
 
@@ -202,7 +202,7 @@ void _registerAuthModule(LoggerService logger) {
       registerUseCase: sl<RegisterUseCase>(),
       forgotPasswordUseCase: sl<ForgotPasswordUseCase>(),
       resetPasswordUseCase: sl<ResetPasswordUseCase>(),
-      verifyEmailUseCase: sl<VerifyEmailUseCase>(),
+      // verifyEmailUseCase: sl<VerifyEmailUseCase>(),
       logoutUseCase: sl<LogoutUseCase>(),
     ),
   );

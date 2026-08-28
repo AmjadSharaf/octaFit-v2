@@ -82,8 +82,7 @@ class CommunityFeedScreen extends StatelessWidget {
                       SectionHeader(
                         title: 'Feed',
                         actionLabel: 'Leaderboard',
-                        onAction: () =>
-                            context.push(AppRoutes.leaderboard),
+                        onAction: () => context.push(AppRoutes.leaderboard),
                       ),
                       ...posts.map(
                         (post) => Padding(
@@ -109,10 +108,7 @@ class CommunityFeedScreen extends StatelessWidget {
 }
 
 class _PostCard extends StatelessWidget {
-  const _PostCard({
-    required this.post,
-    required this.onLike,
-  });
+  const _PostCard({required this.post, required this.onLike});
 
   final PostEntity post;
   final VoidCallback onLike;
@@ -196,10 +192,7 @@ class _PostCard extends StatelessWidget {
               const SizedBox(width: 6),
               Text(
                 '${post.comments}',
-                style: GoogleFonts.inter(
-                  fontSize: 13,
-                  color: AppColors.gray,
-                ),
+                style: GoogleFonts.inter(fontSize: 13, color: AppColors.gray),
               ),
             ],
           ),

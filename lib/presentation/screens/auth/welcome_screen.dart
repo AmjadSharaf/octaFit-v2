@@ -17,9 +17,21 @@ const _features = [
 ];
 
 const _floatingBadges = [
-  _FloatingBadge('AI Coach', Icons.psychology_rounded, BadgeColor.blue, -72, -28),
-  _FloatingBadge('Motion AI', Icons.videocam_rounded, BadgeColor.purple, 68, -36),
-  _FloatingBadge('Physio AI', Icons.healing_rounded, BadgeColor.green, 0, 72),
+  _FloatingBadge(
+    'AI Coach',
+    Icons.psychology_rounded,
+    BadgeColor.blue,
+    -140,
+    -36,
+  ),
+  _FloatingBadge(
+    'Motion AI',
+    Icons.videocam_rounded,
+    BadgeColor.purple,
+    140,
+    -36,
+  ),
+  _FloatingBadge('Physio AI', Icons.healing_rounded, BadgeColor.green, 0, 120),
 ];
 
 class _FloatingBadge {
@@ -70,7 +82,12 @@ class _WelcomeScreenState extends State<WelcomeScreen>
         fit: StackFit.expand,
         children: [
           const GridBackground(),
-          const GradOrb(size: 280, left: -80, top: -60, color: GradOrbColor.blue),
+          const GradOrb(
+            size: 280,
+            left: -80,
+            top: -60,
+            color: GradOrbColor.blue,
+          ),
           const GradOrb(
             size: 220,
             right: -50,
@@ -146,7 +163,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                   ),
                   const SizedBox(height: 12),
                   Text(
-                    'AI-powered training, motion analysis, and recovery — personalized for you.',
+                    'AI-powered trainin motion analysis and recovery  personalized for you',
                     textAlign: TextAlign.center,
                     style: GoogleFonts.inter(
                       fontSize: 14,
@@ -185,7 +202,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                   ),
                   const SizedBox(height: 40),
                   PrimaryButton(
-                    label: "Get Started — It's Free",
+                    label: "Get Started  It's Free",
                     variant: PrimaryButtonVariant.gradient,
                     onPressed: () => context.go(AppRoutes.signup),
                   ),
@@ -242,11 +259,7 @@ class _BadgeChip extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(
-            icon,
-            size: 14,
-            color: AppColors.badgeForeground(color),
-          ),
+          Icon(icon, size: 14, color: AppColors.badgeForeground(color)),
           const SizedBox(width: 4),
           Text(
             label,
@@ -261,4 +274,3 @@ class _BadgeChip extends StatelessWidget {
     );
   }
 }
-

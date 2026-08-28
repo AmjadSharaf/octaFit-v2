@@ -52,6 +52,7 @@ class _SplashScreenState extends State<SplashScreen>
   Widget build(BuildContext context) {
     return OctaScreen(
       showOrbs: true,
+      
       body: Center(
         child: AnimatedBuilder(
           animation: _controller,

@@ -46,62 +46,62 @@ class AiHubScreen extends StatelessWidget {
               style: GoogleFonts.inter(fontSize: 14, color: subColor),
             ),
             const SizedBox(height: 20),
-            GlassCard(
-              glow: GlassGlow.purple,
-              padding: const EdgeInsets.all(20),
-              child: Row(
-                children: [
-                  Container(
-                    width: 56,
-                    height: 56,
-                    decoration: BoxDecoration(
-                      gradient: AppColors.gradBoth,
-                      borderRadius: BorderRadius.circular(16),
-                    ),
-                    child: const Center(
-                      child: Text('🤖', style: TextStyle(fontSize: 28)),
-                    ),
-                  ),
-                  const SizedBox(width: 16),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          status.label,
-                          style: GoogleFonts.spaceGrotesk(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w700,
-                            color: textColor,
-                          ),
-                        ),
-                        const SizedBox(height: 4),
-                        Row(
-                          children: [
-                            Container(
-                              width: 8,
-                              height: 8,
-                              decoration: const BoxDecoration(
-                                color: AppColors.green,
-                                shape: BoxShape.circle,
-                              ),
-                            ),
-                            const SizedBox(width: 6),
-                            Text(
-                              '${status.status} · ${status.score}% accuracy',
-                              style: GoogleFonts.inter(
-                                fontSize: 12,
-                                color: subColor,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            // GlassCard(
+            //   glow: GlassGlow.purple,
+            //   padding: const EdgeInsets.all(20),
+            //   child: Row(
+            //     children: [
+            //       Container(
+            //         width: 56,
+            //         height: 56,
+            //         decoration: BoxDecoration(
+            //           gradient: AppColors.gradBoth,
+            //           borderRadius: BorderRadius.circular(16),
+            //         ),
+            //         child: const Center(
+            //           child: Text('🤖', style: TextStyle(fontSize: 28)),
+            //         ),
+            //       ),
+            //       const SizedBox(width: 16),
+            //       Expanded(
+            //         child: Column(
+            //           crossAxisAlignment: CrossAxisAlignment.start,
+            //           children: [
+            //             Text(
+            //               status.label,
+            //               style: GoogleFonts.spaceGrotesk(
+            //                 fontSize: 16,
+            //                 fontWeight: FontWeight.w700,
+            //                 color: textColor,
+            //               ),
+            //             ),
+            //             const SizedBox(height: 4),
+            //             Row(
+            //               children: [
+            //                 Container(
+            //                   width: 8,
+            //                   height: 8,
+            //                   decoration: const BoxDecoration(
+            //                     color: AppColors.green,
+            //                     shape: BoxShape.circle,
+            //                   ),
+            //                 ),
+            //                 const SizedBox(width: 6),
+            //                 Text(
+            //                   '${status.status} · ${status.score}% accuracy',
+            //                   style: GoogleFonts.inter(
+            //                     fontSize: 12,
+            //                     color: subColor,
+            //                   ),
+            //                 ),
+            //               ],
+            //             ),
+            //           ],
+            //         ),
+            //       ),
+            //     ],
+            //   ),
+            // ),
             const SectionHeader(title: 'AI Features'),
             GridView.count(
               crossAxisCount: 2,
@@ -111,13 +111,13 @@ class AiHubScreen extends StatelessWidget {
               crossAxisSpacing: 12,
               childAspectRatio: 1.1,
               children: [
-                _FeatureTile(
-                  icon: '🧠',
-                  title: 'AI Coach',
-                  subtitle: 'Personal guidance',
-                  color: AppColors.blue,
-                  onTap: () => context.push(AppRoutes.aiCoach),
-                ),
+                // _FeatureTile(
+                //   icon: '🧠',
+                //   title: 'AI Coach',
+                //   subtitle: 'Personal guidance',
+                //   color: AppColors.blue,
+                //   onTap: () => context.push(AppRoutes.aiCoach),
+                // ),
                 _FeatureTile(
                   icon: '💬',
                   title: 'AI Chat',
@@ -125,13 +125,13 @@ class AiHubScreen extends StatelessWidget {
                   color: AppColors.purple,
                   onTap: () => context.push(AppRoutes.aiChat),
                 ),
-                _FeatureTile(
-                  icon: '📹',
-                  title: 'Motion Analyzer',
-                  subtitle: 'Form analysis',
-                  color: AppColors.cyan,
-                  onTap: () => context.push(AppRoutes.motionAnalyzer),
-                ),
+                // _FeatureTile(
+                //   icon: '📹',
+                //   title: 'Motion Analyzer',
+                //   subtitle: 'Form analysis',
+                //   color: AppColors.cyan,
+                //   onTap: () => context.push(AppRoutes.motionAnalyzer),
+                // ),
                 _FeatureTile(
                   icon: '🩺',
                   title: 'AI Physio',
@@ -139,13 +139,13 @@ class AiHubScreen extends StatelessWidget {
                   color: AppColors.green,
                   onTap: () => context.push(AppRoutes.physio),
                 ),
-                _FeatureTile(
-                  icon: '📋',
-                  title: 'Smart Plan',
-                  subtitle: 'AI programs',
-                  color: AppColors.purple,
-                  onTap: () => context.push(AppRoutes.personalizedPlan),
-                ),
+                // _FeatureTile(
+                //   icon: '📋',
+                //   title: 'Smart Plan',
+                //   subtitle: 'AI programs',
+                //   color: AppColors.purple,
+                //   onTap: () => context.push(AppRoutes.personalizedPlan),
+                // ),
                 _FeatureTile(
                   icon: '🥗',
                   title: 'Nutrition AI',
@@ -160,13 +160,13 @@ class AiHubScreen extends StatelessWidget {
                   color: AppColors.blue,
                   onTap: () => context.push(AppRoutes.digitalAthlete),
                 ),
-                _FeatureTile(
-                  icon: '🏆',
-                  title: 'Habit Tracker',
-                  subtitle: 'Build habits',
-                  color: AppColors.orange,
-                  onTap: () => context.push(AppRoutes.habitTracker),
-                ),
+                // _FeatureTile(
+                //   icon: '🏆',
+                //   title: 'Habit Tracker',
+                //   subtitle: 'Build habits',
+                //   color: AppColors.orange,
+                //   onTap: () => context.push(AppRoutes.habitTracker),
+                // ),
               ],
             ),
             const SectionHeader(title: 'Today\'s Insights'),
@@ -239,7 +239,9 @@ class _FeatureTile extends StatelessWidget {
               color: color.withValues(alpha: 0.15),
               borderRadius: BorderRadius.circular(12),
             ),
-            child: Center(child: Text(icon, style: const TextStyle(fontSize: 22))),
+            child: Center(
+              child: Text(icon, style: const TextStyle(fontSize: 22)),
+            ),
           ),
           const Spacer(),
           Text(

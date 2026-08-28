@@ -20,6 +20,8 @@ class _SignupScreenState extends State<SignupScreen> {
   final _nameController = TextEditingController();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
+  final _numController = TextEditingController();
+  final _password2Controller = TextEditingController();
   bool _obscurePassword = true;
 
   @override
@@ -27,17 +29,19 @@ class _SignupScreenState extends State<SignupScreen> {
     _nameController.dispose();
     _emailController.dispose();
     _passwordController.dispose();
+    _numController.dispose();
+    _password2Controller.dispose();
     super.dispose();
   }
 
   Future<void> _handleSignup() async {
     final password = _passwordController.text;
     await context.read<AuthCubit>().register(
-          name: _nameController.text.trim(),
-          email: _emailController.text.trim(),
-          password: password,
-          passwordConfirmation: password,
-        );
+      name: _nameController.text.trim(),
+      email: _emailController.text.trim(),
+      password: password,
+      passwordConfirmation: password,
+    );
   }
 
   @override
@@ -45,7 +49,7 @@ class _SignupScreenState extends State<SignupScreen> {
     return BlocListener<AuthCubit, AuthState>(
       listener: (context, state) {
         if (state.isAuthenticated) {
-          context.go(AppRoutes.verifyEmail);
+          context.go(AppRoutes.home);
         }
       },
       child: BlocBuilder<AuthCubit, AuthState>(
@@ -74,7 +78,7 @@ class _SignupScreenState extends State<SignupScreen> {
                 const SizedBox(height: 32),
                 InputField(
                   label: 'Full Name',
-                  hint: 'Alex Johnson',
+                  hint: 'full name',
                   controller: _nameController,
                   prefixIcon: const Icon(Icons.person_outline_rounded),
                 ),
@@ -83,6 +87,14 @@ class _SignupScreenState extends State<SignupScreen> {
                   label: 'Email',
                   hint: 'you@example.com',
                   controller: _emailController,
+                  keyboardType: TextInputType.emailAddress,
+                  prefixIcon: const Icon(Icons.email_outlined),
+                ),
+                const SizedBox(height: 16),
+                InputField(
+                  label: 'N',
+                  hint: '09xxxxxxxx',
+                  controller: _numController,
                   keyboardType: TextInputType.emailAddress,
                   prefixIcon: const Icon(Icons.email_outlined),
                 ),
@@ -108,11 +120,36 @@ class _SignupScreenState extends State<SignupScreen> {
                     },
                   ),
                 ),
+                const SizedBox(height: 16),
+                InputField(
+                  label: 'Password',
+                  hint: '••••••••',
+                  controller: _password2Controller,
+                  obscureText: _obscurePassword,
+                  prefixIcon: const Icon(Icons.lock_outline_rounded),
+                  suffixIcon: IconButton(
+                    icon: Icon(
+                      _obscurePassword
+                          ? Icons.visibility_off_outlined
+                          : Icons.visibility_outlined,
+                      color: AppColors.gray,
+                      size: 20,
+                    ),
+                    onPressed: () {
+                      setState(() {
+                        _obscurePassword = !_obscurePassword;
+                      });
+                    },
+                  ),
+                ),
                 if (state.errorMessage != null) ...[
                   const SizedBox(height: 12),
                   Text(
                     state.errorMessage!,
-                    style: GoogleFonts.inter(fontSize: 13, color: AppColors.red),
+                    style: GoogleFonts.inter(
+                      fontSize: 13,
+                      color: AppColors.red,
+                    ),
                   ),
                 ],
                 const SizedBox(height: 32),

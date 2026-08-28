@@ -66,15 +66,15 @@ class ResetPasswordUseCase {
   }
 }
 
-class VerifyEmailUseCase {
-  final AuthRepository _repository;
+// class VerifyEmailUseCase {
+//   final AuthRepository _repository;
 
-  VerifyEmailUseCase(this._repository);
+//   VerifyEmailUseCase(this._repository);
 
-  Future<Either<Failure, void>> call({required String token}) {
-    return _repository.verifyEmail(token: token);
-  }
-}
+//   Future<Either<Failure, void>> call({required String token}) {
+//     return _repository.verifyEmail(token: token);
+//   }
+// }
 
 class SocialLoginUseCase {
   final AuthRepository _repository;
@@ -88,4 +88,3 @@ class SocialLoginUseCase {
     return _repository.socialLogin(provider: provider, token: token);
   }
 }
-

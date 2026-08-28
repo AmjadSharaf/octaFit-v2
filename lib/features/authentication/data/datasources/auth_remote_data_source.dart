@@ -30,7 +30,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
   @override
   Future<UserModel> login(String email, String password) async {
     final response = await _apiClient.post(
-      '/auth/login',
+      '/api/login',
       data: {'email': email, 'password': password},
     );
     return UserModel.fromJson(response.data as Map<String, dynamic>);
@@ -44,7 +44,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
     required String passwordConfirmation,
   }) async {
     final response = await _apiClient.post(
-      '/auth/register',
+      '/api/register',
       data: {
         'name': name,
         'email': email,
@@ -67,12 +67,15 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
     required String password,
     required String passwordConfirmation,
   }) async {
-    await _apiClient.post('/auth/reset-password', data: {
-      'email': email,
-      'token': token,
-      'password': password,
-      'password_confirmation': passwordConfirmation,
-    });
+    await _apiClient.post(
+      '/auth/reset-password',
+      data: {
+        'email': email,
+        'token': token,
+        'password': password,
+        'password_confirmation': passwordConfirmation,
+      },
+    );
   }
 
   @override
@@ -100,4 +103,3 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
     await _apiClient.post('/auth/logout');
   }
 }
-

@@ -51,10 +51,12 @@ class _SearchScreenState extends State<SearchScreen> {
     if (mounted) {
       setState(() {
         if (results[0] is Right<Failure, List<ProgramEntity>>) {
-          _allPrograms = (results[0] as Right<Failure, List<ProgramEntity>>).value;
+          _allPrograms =
+              (results[0] as Right<Failure, List<ProgramEntity>>).value;
         }
         if (results[1] is Right<Failure, List<ExerciseEntity>>) {
-          _allExercises = (results[1] as Right<Failure, List<ExerciseEntity>>).value;
+          _allExercises =
+              (results[1] as Right<Failure, List<ExerciseEntity>>).value;
         }
         _isLoading = false;
       });
@@ -105,52 +107,50 @@ class _SearchScreenState extends State<SearchScreen> {
             ),
           ),
           const SizedBox(height: 16),
-          Expanded(
-            child: _query.isEmpty ? _buildTrending() : _buildResults(),
-          ),
+          Expanded(child: _buildResults()),
         ],
       ),
     );
   }
 
-  Widget _buildTrending() {
-    return ListView(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
-      children: [
-        Text(
-          'Trending Searches',
-          style: GoogleFonts.spaceGrotesk(
-            fontSize: 15,
-            fontWeight: FontWeight.w700,
-            color: AppColors.white,
-          ),
-        ),
-        const SizedBox(height: 12),
-        ...['Hypertrophy', 'Deadlift', 'HIIT', 'MMA', 'Squat'].map(
-          (term) => Padding(
-            padding: const EdgeInsets.only(bottom: 8),
-            child: GlassCard(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
-              onTap: () => setState(() => _query = term),
-              child: Row(
-                children: [
-                  const Icon(Icons.trending_up_rounded, color: AppColors.blue, size: 20),
-                  const SizedBox(width: 12),
-                  Text(
-                    term,
-                    style: GoogleFonts.inter(
-                      fontSize: 14,
-                      color: AppColors.white,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ),
-      ],
-    );
-  }
+  // Widget _buildTrending() {
+  //   return ListView(
+  //     padding: const EdgeInsets.symmetric(horizontal: 20),
+  //     children: [
+  //       Text(
+  //         'Trending Searches',
+  //         style: GoogleFonts.spaceGrotesk(
+  //           fontSize: 15,
+  //           fontWeight: FontWeight.w700,
+  //           color: AppColors.white,
+  //         ),
+  //       ),
+  //       const SizedBox(height: 12),
+  //       ...['Hypertrophy', 'Deadlift', 'HIIT', 'MMA', 'Squat'].map(
+  //         (term) => Padding(
+  //           padding: const EdgeInsets.only(bottom: 8),
+  //           child: GlassCard(
+  //             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+  //             onTap: () => setState(() => _query = term),
+  //             child: Row(
+  //               children: [
+  //                 const Icon(Icons.trending_up_rounded, color: AppColors.blue, size: 20),
+  //                 const SizedBox(width: 12),
+  //                 Text(
+  //                   term,
+  //                   style: GoogleFonts.inter(
+  //                     fontSize: 14,
+  //                     color: AppColors.white,
+  //                   ),
+  //                 ),
+  //               ],
+  //             ),
+  //           ),
+  //         ),
+  //       ),
+  //     ],
+  //   );
+  // }
 
   Widget _buildResults() {
     if (_isLoading) {
@@ -245,7 +245,10 @@ class _ProgramResult extends StatelessWidget {
                   ),
                   Text(
                     program.category,
-                    style: GoogleFonts.inter(fontSize: 11, color: AppColors.gray),
+                    style: GoogleFonts.inter(
+                      fontSize: 11,
+                      color: AppColors.gray,
+                    ),
                   ),
                 ],
               ),
@@ -279,7 +282,11 @@ class _ExerciseResult extends StatelessWidget {
                 color: AppColors.glassBlue,
                 borderRadius: BorderRadius.circular(10),
               ),
-              child: const Icon(Icons.fitness_center_rounded, color: AppColors.blue, size: 20),
+              child: const Icon(
+                Icons.fitness_center_rounded,
+                color: AppColors.blue,
+                size: 20,
+              ),
             ),
             const SizedBox(width: 12),
             Expanded(
@@ -296,7 +303,10 @@ class _ExerciseResult extends StatelessWidget {
                   ),
                   Text(
                     '${exercise.muscle} · ${exercise.equipment}',
-                    style: GoogleFonts.inter(fontSize: 11, color: AppColors.gray),
+                    style: GoogleFonts.inter(
+                      fontSize: 11,
+                      color: AppColors.gray,
+                    ),
                   ),
                 ],
               ),

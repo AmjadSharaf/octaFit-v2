@@ -93,10 +93,7 @@ final GoRouter appRouter = GoRouter(
   navigatorKey: _rootNavigatorKey,
   initialLocation: AppRoutes.splash,
   routes: [
-    GoRoute(
-      path: '/',
-      redirect: (_, __) => AppRoutes.splash,
-    ),
+    GoRoute(path: '/', redirect: (_, __) => AppRoutes.splash),
 
     _fullScreenRoute(AppRoutes.splash, const SplashScreen()),
     GoRoute(
@@ -136,7 +133,7 @@ final GoRouter appRouter = GoRouter(
     ),
     _fullScreenRoute(AppRoutes.welcome, const WelcomeScreen()),
     _fullScreenRoute(AppRoutes.signup, const SignupScreen()),
-    _fullScreenRoute(AppRoutes.verifyEmail, const VerifyEmailScreen()),
+    // _fullScreenRoute(AppRoutes.verifyEmail, const VerifyEmailScreen()),
     _fullScreenRoute(AppRoutes.createPassword, const CreatePasswordScreen()),
     _fullScreenRoute(AppRoutes.login, const LoginScreen()),
     _fullScreenRoute(AppRoutes.forgotPassword, const ForgotPasswordScreen()),
@@ -154,10 +151,8 @@ final GoRouter appRouter = GoRouter(
 
     ShellRoute(
       navigatorKey: _shellNavigatorKey,
-      builder: (context, state, child) => _OctaShell(
-        location: state.uri.path,
-        child: child,
-      ),
+      builder: (context, state, child) =>
+          _OctaShell(location: state.uri.path, child: child),
       routes: [
         _shellRoute(
           AppRoutes.home,
@@ -292,9 +287,12 @@ final GoRouter appRouter = GoRouter(
       },
     ),
 
-    _fullScreenRoute(AppRoutes.aiCoach, const AiCoachScreen()),
+    // _fullScreenRoute(AppRoutes.aiCoach, const AiCoachScreen()),
     _fullScreenRoute(AppRoutes.aiChat, const AiChatScreen()),
-    _fullScreenRoute(AppRoutes.personalizedPlan, const PersonalizedPlanScreen()),
+    _fullScreenRoute(
+      AppRoutes.personalizedPlan,
+      const PersonalizedPlanScreen(),
+    ),
     _fullScreenRoute(AppRoutes.nutrition, const NutritionScreen()),
     _fullScreenRoute(AppRoutes.habitTracker, const HabitTrackerScreen()),
     _fullScreenRoute(
@@ -342,11 +340,17 @@ final GoRouter appRouter = GoRouter(
       ),
     ),
     _fullScreenRoute(AppRoutes.mobilityHub, const MobilityHubScreen()),
-    _fullScreenRoute(AppRoutes.consultationForm, const ConsultationFormScreen()),
+    _fullScreenRoute(
+      AppRoutes.consultationForm,
+      const ConsultationFormScreen(),
+    ),
     _fullScreenRoute(AppRoutes.digitalAthlete, const DigitalAthleteHubScreen()),
     _fullScreenRoute(AppRoutes.avatarViewer, const AvatarViewerScreen()),
     _fullScreenRoute(AppRoutes.predictions, const PredictionsScreen()),
-    _fullScreenRoute(AppRoutes.transformationTimeline, const TransformationTimelineScreen()),
+    _fullScreenRoute(
+      AppRoutes.transformationTimeline,
+      const TransformationTimelineScreen(),
+    ),
 
     GoRoute(
       path: AppRoutes.categoryBrowse,
@@ -474,10 +478,8 @@ final GoRouter appRouter = GoRouter(
 GoRoute _shellRoute(String path, Widget child) {
   return GoRoute(
     path: path,
-    pageBuilder: (context, state) => buildOctaTransitionPage(
-      state: state,
-      child: child,
-    ),
+    pageBuilder: (context, state) =>
+        buildOctaTransitionPage(state: state, child: child),
   );
 }
 
@@ -485,18 +487,13 @@ GoRoute _fullScreenRoute(String path, Widget child) {
   return GoRoute(
     path: path,
     parentNavigatorKey: _rootNavigatorKey,
-    pageBuilder: (context, state) => buildOctaTransitionPage(
-      state: state,
-      child: child,
-    ),
+    pageBuilder: (context, state) =>
+        buildOctaTransitionPage(state: state, child: child),
   );
 }
 
 class _OctaShell extends StatelessWidget {
-  const _OctaShell({
-    required this.location,
-    required this.child,
-  });
+  const _OctaShell({required this.location, required this.child});
 
   final String location;
   final Widget child;
@@ -509,10 +506,7 @@ class _OctaShell extends StatelessWidget {
       backgroundColor: isDark ? AppColors.bg : AppColors.lightBg,
       body: Stack(
         fit: StackFit.expand,
-        children: [
-          const _ShellBackground(),
-          child,
-        ],
+        children: [const _ShellBackground(), child],
       ),
       bottomNavigationBar: OctaBottomNavBar(
         activeTab: OctaBottomNavBar.tabFromPath(location),
@@ -537,7 +531,11 @@ class _ShellBackground extends StatelessWidget {
           Positioned(
             right: -40,
             top: 120,
-            child: _BlurredOrb(color: AppColors.purple, size: 200, opacity: 0.25),
+            child: _BlurredOrb(
+              color: AppColors.purple,
+              size: 200,
+              opacity: 0.25,
+            ),
           ),
         ],
       ),
@@ -594,11 +592,7 @@ class _RoutePlaceholder extends StatelessWidget {
       body: Column(
         children: [
           if (showBack)
-            OctaTopBar(
-              title: title,
-              subtitle: subtitle,
-              showBack: true,
-            ),
+            OctaTopBar(title: title, subtitle: subtitle, showBack: true),
           Expanded(child: _placeholderBody),
         ],
       ),
@@ -606,39 +600,36 @@ class _RoutePlaceholder extends StatelessWidget {
   }
 
   Widget get _placeholderBody => Center(
-        child: Padding(
-          padding: const EdgeInsets.all(24),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(
-                Icons.error_outline_rounded,
-                size: 48,
-                color: AppColors.blue.withValues(alpha: 0.6),
-              ),
-              const SizedBox(height: 16),
-              Text(
-                title,
-                textAlign: TextAlign.center,
-                style: GoogleFonts.spaceGrotesk(
-                  fontSize: 22,
-                  fontWeight: FontWeight.w700,
-                  color: AppColors.white,
-                ),
-              ),
-              if (subtitle != null) ...[
-                const SizedBox(height: 8),
-                Text(
-                  subtitle!,
-                  textAlign: TextAlign.center,
-                  style: GoogleFonts.inter(
-                    fontSize: 14,
-                    color: AppColors.gray,
-                  ),
-                ),
-              ],
-            ],
+    child: Padding(
+      padding: const EdgeInsets.all(24),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(
+            Icons.error_outline_rounded,
+            size: 48,
+            color: AppColors.blue.withValues(alpha: 0.6),
           ),
-        ),
-      );
+          const SizedBox(height: 16),
+          Text(
+            title,
+            textAlign: TextAlign.center,
+            style: GoogleFonts.spaceGrotesk(
+              fontSize: 22,
+              fontWeight: FontWeight.w700,
+              color: AppColors.white,
+            ),
+          ),
+          if (subtitle != null) ...[
+            const SizedBox(height: 8),
+            Text(
+              subtitle!,
+              textAlign: TextAlign.center,
+              style: GoogleFonts.inter(fontSize: 14, color: AppColors.gray),
+            ),
+          ],
+        ],
+      ),
+    ),
+  );
 }

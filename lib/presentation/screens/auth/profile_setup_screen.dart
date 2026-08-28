@@ -79,13 +79,13 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
             child: SingleChildScrollView(
               child: switch (_step) {
                 0 => _GoalStep(
-                    selected: _goal,
-                    onSelect: (v) => setState(() => _goal = v),
-                  ),
+                  selected: _goal,
+                  onSelect: (v) => setState(() => _goal = v),
+                ),
                 1 => _LevelStep(
-                    selected: _level,
-                    onSelect: (v) => setState(() => _level = v),
-                  ),
+                  selected: _level,
+                  onSelect: (v) => setState(() => _level = v),
+                ),
                 _ => Column(
                   children: [
                     _SliderRow(
@@ -126,7 +126,7 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
               if (_step < 2) {
                 setState(() => _step++);
               } else {
-                context.read<AuthCubit>().completeProfileSetup();
+                // context.read<AuthCubit>().completeProfileSetup();
                 context.go(AppRoutes.home);
               }
             },
@@ -138,10 +138,7 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
                 onPressed: () => setState(() => _step--),
                 child: Text(
                   'Back',
-                  style: GoogleFonts.inter(
-                    fontSize: 14,
-                    color: AppColors.gray,
-                  ),
+                  style: GoogleFonts.inter(fontSize: 14, color: AppColors.gray),
                 ),
               ),
             ),
@@ -153,16 +150,16 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
   }
 
   String _stepTitle(int step) => switch (step) {
-        0 => "What's your goal?",
-        1 => 'Your experience level',
-        _ => 'About you',
-      };
+    0 => "What's your goal?",
+    1 => 'Your experience level',
+    _ => 'About you',
+  };
 
   String _stepSubtitle(int step) => switch (step) {
-        0 => 'We\'ll personalize your training plan.',
-        1 => 'This helps us calibrate intensity.',
-        _ => 'Help us tailor your program.',
-      };
+    0 => 'We\'ll personalize your training plan.',
+    1 => 'This helps us calibrate intensity.',
+    _ => 'Help us tailor your program.',
+  };
 }
 
 class _GoalStep extends StatelessWidget {

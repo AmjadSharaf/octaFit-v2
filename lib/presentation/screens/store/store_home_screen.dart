@@ -9,7 +9,7 @@ import 'package:octafit/core/widgets/section_header.dart';
 import 'package:octafit/features/marketplace/domain/entities/product_entity.dart';
 import 'package:octafit/features/marketplace/presentation/cubit/marketplace_cubit.dart';
 
-const storeCategories = ['All', 'Supplements', 'Equipment', 'Apparel'];
+const storeCategories = ['All', 'Supp', 'Equipment', 'Apparel'];
 
 class StoreHomeScreen extends StatelessWidget {
   const StoreHomeScreen({super.key});
@@ -108,7 +108,7 @@ class StoreHomeScreen extends StatelessWidget {
                     itemBuilder: (context, index) {
                       final cat = storeCategories[index + 1];
                       final icons = {
-                        'Supplements': '\u{1F48A}',
+                        'Supp': '\u{1F48A}',
                         'Equipment': '\u{1F392}',
                         'Apparel': '\u{1F455}',
                       };
@@ -144,15 +144,13 @@ class StoreHomeScreen extends StatelessWidget {
                 SectionHeader(
                   title: 'Featured Products',
                   actionLabel: 'See All',
-                  onAction: () => context.push(
-                    '${AppRoutes.categoryBrowse}?category=All',
-                  ),
+                  onAction: () =>
+                      context.push('${AppRoutes.categoryBrowse}?category=All'),
                 ),
                 GridView.builder(
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
-                  gridDelegate:
-                      const SliverGridDelegateWithFixedCrossAxisCount(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
                     mainAxisSpacing: 12,
                     crossAxisSpacing: 12,

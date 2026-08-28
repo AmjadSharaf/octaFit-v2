@@ -48,9 +48,7 @@ class SettingsScreen extends StatelessWidget {
                           ),
                         ),
                         subtitle: Text(
-                          isDark
-                              ? 'Dark theme enabled'
-                              : 'Light theme enabled',
+                          isDark ? 'Dark theme enabled' : 'Light theme enabled',
                           style: GoogleFonts.inter(
                             fontSize: 12,
                             color: subColor,
@@ -77,20 +75,20 @@ class SettingsScreen extends StatelessWidget {
                       textColor: textColor,
                       onTap: () => context.push(AppRoutes.editProfile),
                     ),
-                    _SettingsTile(
-                      icon: Icons.star_outline_rounded,
-                      title: 'Membership',
-                      subColor: subColor,
-                      textColor: textColor,
-                      onTap: () => context.push(AppRoutes.membership),
-                    ),
-                    _SettingsTile(
-                      icon: Icons.notifications_outlined,
-                      title: 'Notifications',
-                      subColor: subColor,
-                      textColor: textColor,
-                      onTap: () {},
-                    ),
+                    // _SettingsTile(
+                    //   icon: Icons.star_outline_rounded,
+                    //   title: 'Membership',
+                    //   subColor: subColor,
+                    //   textColor: textColor,
+                    //   onTap: () => context.push(AppRoutes.membership),
+                    // ),
+                    // _SettingsTile(
+                    //   icon: Icons.notifications_outlined,
+                    //   title: 'Notifications',
+                    //   subColor: subColor,
+                    //   textColor: textColor,
+                    //   onTap: () {},
+                    // ),
                     const SizedBox(height: 20),
                     _SectionLabel('Support'),
                     _SettingsTile(

@@ -44,13 +44,15 @@ class _AiChatScreenState extends State<AiChatScreen> {
   @override
   void initState() {
     super.initState();
-    _messages.add(ChatMessage(
-      id: 'welcome',
-      text:
-          'Hey Alex! I\'m Coach OCTA, your AI fitness companion. Ask me about training, nutrition, or recovery — I\'ve got you covered.',
-      isUser: false,
-      timestamp: DateTime.now(),
-    ));
+    _messages.add(
+      ChatMessage(
+        id: 'welcome',
+        text:
+            'Hey ! I\'m Coach OCTA, your AI fitness companion. Ask me about training, nutrition, or recovery — I\'ve got you covered.',
+        isUser: false,
+        timestamp: DateTime.now(),
+      ),
+    );
   }
 
   @override
@@ -78,12 +80,14 @@ class _AiChatScreenState extends State<AiChatScreen> {
     _controller.clear();
 
     setState(() {
-      _messages.add(ChatMessage(
-        id: 'user_${DateTime.now().millisecondsSinceEpoch}',
-        text: text,
-        isUser: true,
-        timestamp: DateTime.now(),
-      ));
+      _messages.add(
+        ChatMessage(
+          id: 'user_${DateTime.now().millisecondsSinceEpoch}',
+          text: text,
+          isUser: true,
+          timestamp: DateTime.now(),
+        ),
+      );
       _isTyping = true;
     });
     _scrollToBottom();
@@ -94,12 +98,14 @@ class _AiChatScreenState extends State<AiChatScreen> {
     setState(() {
       final response = _aiResponses[_responseIndex % _aiResponses.length];
       _responseIndex++;
-      _messages.add(ChatMessage(
-        id: 'ai_${DateTime.now().millisecondsSinceEpoch}',
-        text: response,
-        isUser: false,
-        timestamp: DateTime.now(),
-      ));
+      _messages.add(
+        ChatMessage(
+          id: 'ai_${DateTime.now().millisecondsSinceEpoch}',
+          text: response,
+          isUser: false,
+          timestamp: DateTime.now(),
+        ),
+      );
       _isTyping = false;
     });
     _scrollToBottom();
@@ -109,12 +115,14 @@ class _AiChatScreenState extends State<AiChatScreen> {
     setState(() {
       _messages.clear();
       _responseIndex = 0;
-      _messages.add(ChatMessage(
-        id: 'welcome',
-        text: 'Chat cleared. How can I help you today?',
-        isUser: false,
-        timestamp: DateTime.now(),
-      ));
+      _messages.add(
+        ChatMessage(
+          id: 'welcome',
+          text: 'Chat cleared. How can I help you today?',
+          isUser: false,
+          timestamp: DateTime.now(),
+        ),
+      );
     });
   }
 
@@ -145,7 +153,11 @@ class _AiChatScreenState extends State<AiChatScreen> {
                   return _TypingBubble();
                 }
                 final msg = _messages[index];
-                return _ChatBubble(message: msg, textColor: textColor, subColor: subColor);
+                return _ChatBubble(
+                  message: msg,
+                  textColor: textColor,
+                  subColor: subColor,
+                );
               },
             ),
           ),
@@ -184,7 +196,11 @@ class _AiChatScreenState extends State<AiChatScreen> {
                       gradient: AppColors.gradBoth,
                       borderRadius: BorderRadius.circular(14),
                     ),
-                    child: const Icon(Icons.send_rounded, color: AppColors.white, size: 22),
+                    child: const Icon(
+                      Icons.send_rounded,
+                      color: AppColors.white,
+                      size: 22,
+                    ),
                   ),
                 ),
               ],
@@ -220,9 +236,7 @@ class _ChatBubble extends StatelessWidget {
         ),
         child: GlassCard(
           glow: isUser ? GlassGlow.none : GlassGlow.blue,
-          color: isUser
-              ? AppColors.blue.withValues(alpha: 0.25)
-              : null,
+          color: isUser ? AppColors.blue.withValues(alpha: 0.25) : null,
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

@@ -28,7 +28,7 @@ class ProfileScreen extends StatelessWidget {
           children: [
             Row(
               children: [
-                const AvatarWidget(size: 72, initials: 'AJ', glow: true),
+                const AvatarWidget(size: 72, initials: 'AS', glow: true),
                 const SizedBox(width: 16),
                 Expanded(
                   child: Column(
@@ -37,19 +37,22 @@ class ProfileScreen extends StatelessWidget {
                       Row(
                         children: [
                           Text(
-                            'Alex Johnson',
+                            'Amjad Sharaf',
                             style: GoogleFonts.spaceGrotesk(
                               fontSize: 22,
                               fontWeight: FontWeight.w700,
                               color: textColor,
                             ),
                           ),
-                          const SizedBox(width: 8),
-                          const BadgeWidget(label: 'PRO', color: BadgeColor.purple),
+                          // const SizedBox(width: 8),
+                          // const BadgeWidget(
+                          //   label: 'PRO',
+                          //   color: BadgeColor.purple,
+                          // ),
                         ],
                       ),
                       Text(
-                        '@alex_octafit',
+                        '@amjad_octa',
                         style: GoogleFonts.inter(fontSize: 13, color: subColor),
                       ),
                       Text(
@@ -70,71 +73,89 @@ class ProfileScreen extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 20),
-            Row(
-              children: [
-                Expanded(
-                  child: StatCard(
-                    icon: const Icon(Icons.fitness_center_rounded),
-                    label: 'Workouts',
-                    value: '142',
-                    color: AppColors.blue,
-                  ),
-                ),
-                const SizedBox(width: 10),
-                Expanded(
-                  child: StatCard(
-                    icon: const Icon(Icons.local_fire_department_rounded),
-                    label: 'Streak',
-                    value: '14',
-                    unit: ' days',
-                    color: AppColors.orange,
-                  ),
-                ),
-                const SizedBox(width: 10),
-                Expanded(
-                  child: StatCard(
-                    icon: const Icon(Icons.emoji_events_rounded),
-                    label: 'PRs',
-                    value: '23',
-                    color: AppColors.purple,
-                  ),
-                ),
-              ],
-            ),
-            const SectionHeader(title: 'Weekly Goals'),
-            GlassCard(
-              glow: GlassGlow.blue,
-              padding: const EdgeInsets.all(20),
-              child: Row(
-                children: [
-                  ProgressRing(
-                    value: 80,
-                    size: 72,
-                    center: Text(
-                      '80%',
-                      style: GoogleFonts.spaceGrotesk(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w700,
-                        color: textColor,
-                      ),
-                    ),
-                  ),
-                  const SizedBox(width: 20),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        _GoalRow(label: 'Workouts', current: '4', target: '5', textColor: textColor, subColor: subColor),
-                        const SizedBox(height: 8),
-                        _GoalRow(label: 'Calories', current: '9.9k', target: '12k', textColor: textColor, subColor: subColor),
-                        const SizedBox(height: 8),
-                        _GoalRow(label: 'Hours', current: '6.8', target: '8', textColor: textColor, subColor: subColor),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            // Row(
+            //   children: [
+            //     Expanded(
+            //       child: StatCard(
+            //         icon: const Icon(Icons.fitness_center_rounded),
+            //         label: 'Workouts',
+            //         value: '142',
+            //         color: AppColors.blue,
+            //       ),
+            //     ),
+            //     const SizedBox(width: 10),
+            //     Expanded(
+            //       child: StatCard(
+            //         icon: const Icon(Icons.local_fire_department_rounded),
+            //         label: 'Streak',
+            //         value: '14',
+            //         unit: ' days',
+            //         color: AppColors.orange,
+            //       ),
+            //     ),
+            //     const SizedBox(width: 10),
+            //     Expanded(
+            //       child: StatCard(
+            //         icon: const Icon(Icons.emoji_events_rounded),
+            //         label: 'PRs',
+            //         value: '23',
+            //         color: AppColors.purple,
+            //       ),
+            //     ),
+            //   ],
+            // ),
+            // const SectionHeader(title: 'Weekly Goals'),
+            // GlassCard(
+            //   glow: GlassGlow.blue,
+            //   padding: const EdgeInsets.all(20),
+            //   child: Row(
+            //     children: [
+            //       ProgressRing(
+            //         value: 80,
+            //         size: 72,
+            //         center: Text(
+            //           '80%',
+            //           style: GoogleFonts.spaceGrotesk(
+            //             fontSize: 14,
+            //             fontWeight: FontWeight.w700,
+            //             color: textColor,
+            //           ),
+            //         ),
+            //       ),
+            //       const SizedBox(width: 20),
+            //       Expanded(
+            //         child: Column(
+            //           crossAxisAlignment: CrossAxisAlignment.start,
+            //           children: [
+            //             _GoalRow(
+            //               label: 'Workouts',
+            //               current: '4',
+            //               target: '5',
+            //               textColor: textColor,
+            //               subColor: subColor,
+            //             ),
+            //             const SizedBox(height: 8),
+            //             _GoalRow(
+            //               label: 'Calories',
+            //               current: '9.9k',
+            //               target: '12k',
+            //               textColor: textColor,
+            //               subColor: subColor,
+            //             ),
+            //             const SizedBox(height: 8),
+            // _GoalRow(
+            //   label: 'Hours',
+            //   current: '6.8',
+            //   target: '8',
+            //   textColor: textColor,
+            //   subColor: subColor,
+            // ),
+            // ],
+            // ),
+            // ),
+            // ],
+            // ),
+            // ),
             const SectionHeader(title: 'Activity'),
             ..._activityItems(context).map(
               (item) => Padding(
@@ -170,55 +191,54 @@ class ProfileScreen extends StatelessWidget {
 
   static List<(String, String, VoidCallback)> _activityItems(
     BuildContext context,
-  ) =>
-      [
-        ('🏆', 'Achievements', () => context.push(AppRoutes.achievements)),
-        ('🎯', 'Challenges', () => context.push(AppRoutes.challenges)),
-        ('📊', 'Milestones', () => context.push(AppRoutes.milestones)),
-        ('👥', 'Community', () => context.push(AppRoutes.community)),
-        ('🏟️', 'Sports Groups', () => context.push(AppRoutes.sportsGroups)),
-        ('✏️', 'Edit Profile', () => context.push(AppRoutes.editProfile)),
-        ('⚙️', 'Settings', () => context.push(AppRoutes.settings)),
-        ('⭐', 'Membership', () => context.push(AppRoutes.membership)),
-        ('💎', 'Upgrade to Pro', () => context.push(AppRoutes.subscriptionPaywall)),
-      ];
+  ) => [
+    // ('🏆', 'Achievements', () => context.push(AppRoutes.achievements)),
+    // ('🎯', 'Challenges', () => context.push(AppRoutes.challenges)),
+    // ('📊', 'Milestones', () => context.push(AppRoutes.milestones)),
+    ('👥', 'Community', () => context.push(AppRoutes.community)),
+    ('🏟️', 'Sports Groups', () => context.push(AppRoutes.sportsGroups)),
+    ('✏️', 'Edit Profile', () => context.push(AppRoutes.editProfile)),
+    ('⚙️', 'Settings', () => context.push(AppRoutes.settings)),
+    ('⭐', 'Membership', () => context.push(AppRoutes.membership)),
+    // ('💎', 'Upgrade to Pro', () => context.push(AppRoutes.subscriptionPaywall)),
+  ];
 }
 
-class _GoalRow extends StatelessWidget {
-  const _GoalRow({
-    required this.label,
-    required this.current,
-    required this.target,
-    required this.textColor,
-    required this.subColor,
-  });
+// class _GoalRow extends StatelessWidget {
+//   const _GoalRow({
+//     required this.label,
+//     required this.current,
+//     required this.target,
+//     required this.textColor,
+//     required this.subColor,
+//   });
 
-  final String label;
-  final String current;
-  final String target;
-  final Color textColor;
-  final Color subColor;
+//   final String label;
+//   final String current;
+//   final String target;
+//   final Color textColor;
+//   final Color subColor;
 
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        SizedBox(
-          width: 72,
-          child: Text(
-            label,
-            style: GoogleFonts.inter(fontSize: 12, color: subColor),
-          ),
-        ),
-        Text(
-          '$current / $target',
-          style: GoogleFonts.spaceGrotesk(
-            fontSize: 13,
-            fontWeight: FontWeight.w600,
-            color: textColor,
-          ),
-        ),
-      ],
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Row(
+//       children: [
+//         SizedBox(
+//           width: 72,
+//           child: Text(
+//             label,
+//             style: GoogleFonts.inter(fontSize: 12, color: subColor),
+//           ),
+//         ),
+//         Text(
+//           '$current / $target',
+//           style: GoogleFonts.spaceGrotesk(
+//             fontSize: 13,
+//             fontWeight: FontWeight.w600,
+//             color: textColor,
+//           ),
+//         ),
+//       ],
+//     );
+//   }
+// }
