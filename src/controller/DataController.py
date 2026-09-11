@@ -22,7 +22,7 @@ class DataController(BaseController):
 
         return True , ResponeSignals.FILE_VALIDATION_SUCSSES.value
 
-    def genrate_uniqe_filename(self , origan_file_name : str , project_id:str):
+    def genrate_uniqe_filepath(self , origan_file_name : str , project_id:str):
         random_key = self.generate_random_string()
         project_path = ProjectController().get_project_path(project_id=project_id)
 
@@ -41,7 +41,7 @@ class DataController(BaseController):
             new_file_path = os.path.join(
                 project_path , random_key + "_"+cleand_file_name
             )
-            return new_file_path
+            return new_file_path, random_key + "_" +cleand_file_name
 
     def get_clean_file_name(self ,origan_file_name:str ):
         cleand_file_name = re.sub(r'[^\w]' , '' , origan_file_name.strip())
